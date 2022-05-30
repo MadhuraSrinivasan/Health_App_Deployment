@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="col-sm-12" align="center">
+    <h1>Diabetic Test </h1>
+    <br>
+    <h5 align="center"> Know whether you're diabetic at the click of a button! </h5>
+    <br>
+</div>
+<div class="col-sm-12" align="center">
+    <form action="{{url_for('predict')}}" method="POST" >
+        <div class="input-group">
+            
+            <span>
+                <label for="preg" >No of Pregnancies :  &nbsp; </label>
+                <input type="text" id="preg" name="preg">   
+            </span> 
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="Gluc">Glucose : &nbsp; </label>
+            <input  type="text" id="Gluc" name="Gluc">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="bpc">Blood Pressure : &nbsp; </label>
+            <input  type="text" id="bp" name="bp">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="thickness">Skin Thickness : &nbsp; </label>
+            <input  type="text" id="thickness" name="thickness">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="insulin">Insulin : &nbsp; </label>
+            <input  type="text" id="insulin" name="insulin">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="BMI">BMI : &nbsp; </label>
+            <input  type="text" id="BMI" name="BMI">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="Diabetes pedigree">Diabetes pedigree : &nbsp; </label>
+            <input  type="text" id="Diabetes pedigree" name="Diabetes pedigree">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="age">Age : &nbsp; </label>
+            <input  type="text" id="age" name="age">
+        </div>
+        <br>
+        <button type="submit" align="center">SUBMIT</button>
+        <br>
+        <br>
+    </form>
+    {{predict_result}}
+    <br>
+    <br>
+
+
+</div>
+
+{% endblock content %}

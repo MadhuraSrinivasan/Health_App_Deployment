@@ -1,0 +1,136 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="col-sm-12" align="center">
+    <h1>Cardio Test </h1>
+    <br>
+    <h5 align="center"> Know whether you're diagonised with cardiac disease at the click of a button! </h5>
+    <br>
+</div>
+<div class="col-sm-12" align="center">
+    <form action="{{url_for('predict_heart')}}" method="POST" >
+        <div class="input-group">
+            
+            <span>
+                <label for="age" >Age :  &nbsp; </label>
+                <input type="text" id="age" name="age">   
+            </span> 
+        </div>
+        <br>
+        <div class="input-group">
+            <div class="text-center">
+            <label for="sex"> Sex (M-0,F-1) : &nbsp; </label>
+            <select  name="sex" >
+                <option value="0" >0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</option>
+                <option value="1">1</option>
+            </select>
+                
+            </div>
+            
+        </div>
+        <br>
+        <div class="input-group">
+            <span>
+                <label for="chest pain type">Chest pain type : </label>
+                <input type="text" id="chest pain type" name="chest pain type">
+                <br>
+            </span> 
+            
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="restingbp">Resting BP : &nbsp; </label>
+            <input  type="text" id="restingbp" name="restingbp">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="chol">Cholestrol : &nbsp; </label>
+            <input  type="text" id="chol" name="chol">
+        </div>
+        <br>
+
+        <div class="input-group">
+            <div class="text-center">
+                <label for="fbs">FBS(>120mg/dl 0-yes,1-no) :  &nbsp; &nbsp; </label>
+                <select name="fbs" id="fbs">
+                    <option value="0">0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</option>
+                    <option value="1">1</option>
+                </select>
+
+            </div>
+          
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="restecg">Rest ECG : &nbsp;</label>
+            <input type="text" id="restecg" name="restecg">
+            <br>
+        </div>
+        <br>
+
+        <div class="input-group">
+            <div class="text-center">
+                <label for="thalach">Max heart rate : </label>
+                <input type="text" id="thalach" name="thalach">
+                <br>
+
+            </div>
+           
+        </div>
+        <br>
+
+        <div class="input-group">
+            <div class="text-center">
+            <label for="exercise">Exercise induced Angina (0-yes,1-no) : &nbsp; </label>
+            <select align="center" name="exercise" id="exercise">
+                <option value="0" >0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</option>
+                <option value="1">1</option>
+            </select>
+                
+            </div>
+            
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="oldpeak">Oldpeak : &nbsp;</label>
+            <input type="text" id="oldpeak" name="oldpeak">
+            <br>
+        
+        </div>
+        <br>
+
+        <div class="input-group">
+            <label for="slope">Slope : &nbsp; </label>
+            <input type="text" id="slope" name="slope">
+    <br>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="ca">No of Vessels * : &nbsp; </label>
+            <input  type="text" id="ca" name="ca">
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="thal">Thalassemia : &nbsp; </label>
+            <input type="text" id="thal" name="thal">
+    
+        </div>
+
+
+        <br>
+        <br>
+        <button type="submit" align="center">SUBMIT</button>
+        <br>
+        <br>
+    </form>
+    {{predicted_output}}
+
+
+    <br>
+    <br>
+
+
+</div>
+    
+
+{% endblock content %}
